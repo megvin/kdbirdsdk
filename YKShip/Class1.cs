@@ -3,17 +3,18 @@ using System;
 using YK.Ship.BirdCommon;
 using YK.Ship.BirdCommon.Profile;
 using YKShip.Bird.OrderQuery;
+using YKShip.BirdCommon;
 using YKShip.EOrderService;
 
 namespace YKShip
 {
-   public   class Class1
+    public class Class1
     {
         public static void test()
         {
             var req = new EOrderServiceRequest();
             req.OrderCode = "20034343";
-            req.ShipperCode = "SF";
+            req.ShipperCode = ShipCompany.SF;
             req.PayType = 1;
             req.ExpType = 1;
             req.Sender = new EOrderServiceRequest.SenderModel()
@@ -22,8 +23,8 @@ namespace YKShip
                 Name = "LIUHUA",
                 Mobile = "13969777534",
                 Tel = "",
-                ProvinceName = "上海市",
-                CityName = "上海",
+                ProvinceName = "上海",
+                CityName = "上海市",
                 Address = "明珠路73号",
             };
             req.Receiver = new EOrderServiceRequest.SenderModel()
@@ -32,8 +33,8 @@ namespace YKShip
                 Name = "LIUHUA",
                 Mobile = "13969777534",
                 Tel = "",
-                ProvinceName = "上海市",
-                CityName = "上海",
+                ProvinceName = "上海",
+                CityName = "上海市",
                 Address = "明珠路73号",
             };
             req.Commodity = new System.Collections.Generic.List<EOrderServiceRequest.CommodityModel>();
@@ -84,7 +85,7 @@ namespace YKShip
                 SecretKey = "738881f4-fa19-4e11-bae8-e5877ed8d1d4",
             };
 
-            var client = new OrderQueryClient(credential, new ClientProfile(),true);
+            var client = new OrderQueryClient(credential, new ClientProfile(), true);
             var rsp = client.Query(req);
 
 

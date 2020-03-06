@@ -40,7 +40,13 @@ namespace YKShip.EOrderService
             public string Tel { get; set; }
             public string Mobile { get; set; }
             public string PostCode { get; set; }
+            /// <summary>
+            /// 直辖市，上海，北京，不带市
+            /// </summary>
             public string ProvinceName { get; set; }
+            /// <summary>
+            /// 直辖市，带市北京市
+            /// </summary>
             public string CityName { get; set; }
             public string Address { get; set; }
         }
